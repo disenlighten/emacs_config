@@ -23,6 +23,9 @@ There are two things you can do about this warning:
 
 (desktop-save-mode 1)
 
+(setq solarized-scale-org-headlines nil)
+(setq solarized-use-variable-pitch nil)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -44,3 +47,4 @@ t(custom-set-faces
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 
 (global-set-key (kbd "C-x g") 'magit-status)
+
