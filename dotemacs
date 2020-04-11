@@ -1,3 +1,4 @@
+(server-start)
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -50,3 +51,8 @@ t
 (global-set-key (kbd "C-x g") 'magit-status)
 
 (setenv "PATH" (concat (getenv "PATH") ":/Library/TeX/texbin/"))
+
+(if (eq system-type 'darwin)
+(set-face-attribute 'default nil
+              :font "-unknown-Hack-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1"))
+
