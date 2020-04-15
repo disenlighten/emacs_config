@@ -52,7 +52,16 @@ t
 
 (setenv "PATH" (concat (getenv "PATH") ":/Library/TeX/texbin/"))
 
-(if (eq system-type 'darwin)
+(when (eq system-type 'darwin)
 (set-face-attribute 'default nil
               :font "-unknown-Hack-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1"))
 
+(when (eq system-type 'darwin)
+(setq python-shell-interpreter "/usr/local/bin/ipython"
+      python-shell-interpreter-args "--simple-prompt -i"))
+
+(display-time-mode 1)
+(setq display-time-format "%Z %R"
+      display-time-24hr-format 1
+      display-time-default-load-average nil)
+(set-time-zone-rule "Etc/UTC")
