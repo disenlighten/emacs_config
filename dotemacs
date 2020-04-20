@@ -50,15 +50,29 @@ t
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
+;; save location for backup files
+(setq backup-directory-alist `(("." . "~/.filesbak")))
+
 (setenv "PATH" (concat (getenv "PATH") ":/Library/TeX/texbin/"))
+
+;; org-mode specific setup
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+
+;; include my org tags
+(require 'mytags "~/.emacs.d/mytags.el")
+(setq-local org-complete-tags-always-offer-all-agenda-tags t)
 
 (when (eq system-type 'darwin)
 (set-face-attribute 'default nil
               :font "-unknown-Hack-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1"))
 
 (when (eq system-type 'darwin)
-(setq python-shell-interpreter "/usr/local/bin/ipython"
-      python-shell-interpreter-args "--simple-prompt -i"))
+      setq python-shell-interpreter "/usr/local/bin/ipython"
+           python-shell-interpreter-args "--simple-prompt -i"))
 
 (display-time-mode 1)
 (setq display-time-format "%Z %R"
