@@ -66,9 +66,9 @@ t
 (require 'mytags "~/.emacs.d/mytags.el")
 (setq-local org-complete-tags-always-offer-all-agenda-tags t)
 
-(when (eq system-type 'darwin)
-(set-face-attribute 'default nil
-              :font "-unknown-Hack-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1"))
+;; set a default font
+(when (member "DejaVu Sans Mono" (font-family-list))
+  (set-face-attribute 'default nil :font "DejaVu Sans Mono"))
 
 (when (eq system-type 'darwin)
       setq python-shell-interpreter "/usr/local/bin/ipython"
