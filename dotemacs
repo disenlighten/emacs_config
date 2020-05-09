@@ -79,3 +79,8 @@ t
       display-time-24hr-format 1
       display-time-default-load-average nil)
 (set-time-zone-rule "Etc/UTC")
+
+(when (version<= "20.0.50" emacs-version )
+  (global-display-line-numbers-mode))
+
+(setq js-indent-level 2)
