@@ -117,6 +117,9 @@ There are two things you can do about this warning:
 
 ;; end clojure book customizations
 
+(load "mac-switch-meta.el")
+(mac-switch-meta)
+
 (setq solarized-scale-org-headlines nil)
 (setq solarized-use-variable-pitch nil)
 
